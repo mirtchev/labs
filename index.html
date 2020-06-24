@@ -22,7 +22,10 @@
 	    const movie = document.getElementById("movie");
 	    movie.play();//prepare canvas
 	    const canvas = document.getElementById("augmented_canvas");
-	    const draw = canvas.getContext("2d");const result = await model.estimateFaces(frame, false);
+	    const draw = canvas.getContext("2d");
+	    const result = await model.estimateFaces(frame, false);
+		  
+            draw.drawImage(frame, 0, 0, 640, 480);//check if face is detected		  
           </script>
 	  
     </div>
