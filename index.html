@@ -25,7 +25,8 @@
 	    const draw = canvas.getContext("2d");
 	    const result = await model.estimateFaces(frame, false);
 		  
-            draw.drawImage(frame, 0, 0, 640, 480);//check if face is detected		  
+            draw.drawImage(frame, 0, 0, 640, 480);//check if face is detected	
+	    draw.drawImage(movie, 0, 0, 640, 480);
           </script>
 	  
     </div>
