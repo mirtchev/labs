@@ -13,9 +13,18 @@
     </div>
     <div>
       <video width=640 height=480 autoplay muted id=”camera”></video>	    
-      <canvas width=640 height=480 id=”augmented_canvas”></canvas>
-	    
+      <canvas width=640 height=480 id=”augmented_canvas”></canvas>    
       <video autoplay loop id=”movie” style=”visibility: hidden”> <source src=”TensorFlowjs.mp4" type=”video/mp4"></source> </video>
+	  
+	  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/facemesh">
+	    //load camera stream
+	    const frame = document.getElementById("camera");//load movie stream
+	    const movie = document.getElementById("movie");
+	    movie.play();//prepare canvas
+	    const canvas = document.getElementById("augmented_canvas");
+	    const draw = canvas.getContext("2d");const result = await model.estimateFaces(frame, false);
+          </script>
+	  
     </div>
   </body>
 </html>
